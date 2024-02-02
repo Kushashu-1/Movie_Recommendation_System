@@ -2,12 +2,13 @@ import streamlit as st
 import pickle
 import pandas as pd
 import requests
+
 ## _____________________________________________Helper Function _________________________________________________________##
-similarity = pickle.load(open(
-    'F:\IIT_classes\Sem_3\Project\Movie_recommendation_system\similarity.pkl', 'rb'))
+similarity = pickle.load(open('similarity.pkl', 'rb'))
 
 
 def fetch_poster(movie_id):
+    # Using Campus-X TMDB API Key
     response = requests.get(
         f"https://api.themoviedb.org/3/movie/{movie_id}?api_key=0cc7e32beda738dbefc3c6cd2f6a3b4e&language=en-US")
     data = response.json()
@@ -32,8 +33,7 @@ def recommender(movie):
 # ________________________________________________________________________________
 st.title("Movie Recommendation System")
 
-movies_dict = pickle.load(open(
-    'F:\IIT_classes\Sem_3\Project\Movie_recommendation_system\movies_dict.pkl', 'rb'))
+movies_dict = pickle.load(open('movies_dict.pkl', 'rb'))
 movies = pd.DataFrame(movies_dict)
 
 selected = st.selectbox("Select Movie Name", movies['title'].values)
@@ -55,4 +55,3 @@ if st.button('Show Recommendation'):
     with col5:
         st.text(recommended_movie_names[4])
         st.image(recommended_movie_posters[4])
-
