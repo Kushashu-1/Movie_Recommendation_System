@@ -1,5 +1,5 @@
 # Recommendation System
-### Defintion :
+### Definition :
 A recommendation system is a technology that suggests items to users based on their preferences and behavior. It utilizes algorithms to analyze user data, such as past interactions or ratings, and generates personalized recommendations. These systems are widely employed in various online platforms, including e-commerce websites, streaming services, and social media platforms, to enhance user experience and engagement. By leveraging techniques like collaborative filtering and content-based filtering, recommendation systems aim to provide relevant and tailored suggestions to users, ultimately improving user satisfaction and retention.
 ### 1 . Content Based Movie Recommendation
 Content Based Recommendation System: It uses attributes such as genre, director, description, actors, etc. for movies, to make suggestions for the users. The intuition behind this sort of recommendation system is that if a user liked a particular movie or show, he/she might like a movie or a show similar to it.
