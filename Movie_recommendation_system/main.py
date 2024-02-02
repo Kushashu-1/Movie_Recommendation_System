@@ -3,9 +3,7 @@ import pickle
 import pandas as pd
 import requests
 
-## _____________________________________________Helper Function _________________________________________________________##
 similarity = pickle.load(open('similarity.pkl', 'rb'))
-
 
 def fetch_poster(movie_id):
     # Using Campus-X TMDB API Key
@@ -29,8 +27,6 @@ def recommender(movie):
         m_poster.append(fetch_poster(movie_id))
     return recommended_movies, m_poster
 
-
-# ________________________________________________________________________________
 st.title("Movie Recommendation System")
 
 movies_dict = pickle.load(open('movies_dict.pkl', 'rb'))
